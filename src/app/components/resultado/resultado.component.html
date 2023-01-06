@@ -1,0 +1,29 @@
+<div class="container-fluid text-center">
+    <h1>Resultados:</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">EstiloMusical</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resultado of resultados">
+            <th scope="row">{{ resultado.id }}</th>
+            <td>{{ resultado.estiloMusical }}</td>
+            <td>{{ resultado.email}}</td>
+          </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="consultarResultados()">
+        </ngb-pagination>
+
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="consultarResultados()">
+          <option [ngValue]="2">2 items per page</option>
+          <option [ngValue]="4">4 items per page</option>
+          <option [ngValue]="6">6 items per page</option>  
+        </select>
+     </div>      
+</div>

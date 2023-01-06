@@ -1,0 +1,21 @@
+<div class="container-fluid text-center">
+<h1>Encuesta</h1>
+
+<form #formEncuesta="ngForm" (ngSubmit)="guardarEncuesta(formEncuesta?.value)">
+<div class="mb-3">
+    <label for="estiloMusicalInput" class="form-label">ESTILO MUSICAL</label>
+    <select class="form-select" name="estilo" [(ngModel)]="valorSeleccionado" aria-label="Default select example">
+        <option selected>Seleccione</option>
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Clasica">Clasica</option>
+      </select>
+    <label for="exampleFormControlInput2" class="form-label">CORREO ELECTRÓNICO</label>
+    <input type="email" name="email" class="form-control" [(ngModel)]="encuesta.email" id="exampleFormControlInput1" placeholder="email@ejemplo.com">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar Encuesta</button>
+  </div>
+</form>
+</div>
